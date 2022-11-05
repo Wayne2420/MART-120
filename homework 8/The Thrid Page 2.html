@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <title>Contact Me</title>
+        <script>
+            function checkboxes()
+            {
+                var firstName = document.getElementById("firstName").value;
+                    if(firstName == "")
+                    {
+                        document.getElementById("txtfirstName").focus();
+                        document.getElementById("txtfirstName").style.backgroundColor = "red";
+                        document.getElementById("txtfirstNameMessage").innerHTML = "* Required":
+                        document.getElementById("txtfirstNameMessage").style.color = "red";
+                    }
+                    else{
+                        document.getElementById("txtfirstName").style.backgroundColor = "white";
+                        document.getElementById("txtfirstNameMessage").style.color = "white";
+                    }
+                    var lastName = document.getElementById("txtlastName").value;
+                    if(lastName == "")
+                    {
+                        document.getElementById("txtlastName").focus();
+                        document.getElementById("txtlastName").style.backgroundColor = "red";
+                        document.getElementById("txtlastNameMessage").innerHTML = "* Required";
+                        document.getElementById("txtlastNameMessage").style.color = "red";
+                    }
+                    else{
+                        document.getElementById("txtlastName").style.backgroundColor = "red";
+                        document.getElementById("txtlastNameMessage").style.color = "white";
+                    }
+                    var emailName;
+                    emailName = document.getElementById("txtEmail").value;
+                    if(emailName == "")
+                    {
+                        document.getElementById("txtEmail").focus();
+                        document.getElementById("txtEmail").style.backgroundColor = "red";
+                        document.getElementById("txtEmailMessage").innerHTML = "* Required";
+                        document.getElementById("txtEmailMessage").style.color = "red";
+                    }
+                    else{
+                        document.getElementById("txtEmail").style.backgroundColor = "white";
+                        document.getElementById("txtEmailMessage").style.color = "white";
+                    }
+            }
+            function getinformation()
+            {
+              var yesButton = document.getElementById("yes").value;
+              var noButton = document.getElementById("no").value;  
+              if(document.getElementById("yes").checked == false)
+              {
+                alert("Requirments Not Met");
+              }
+              if(document.getElementById("no").checked == true)
+              {
+                alert("Requirments Not Met");
+              }
+            }
+        </script>
+        <style>
+            body {
+                color: crimson;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            h1 {
+                color: crimson;
+            }
+        </style>
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" id="txtfirstName"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" id="txtlastName"></td>
+            </tr>
+            <tr>
+                <td>Email Address</td>
+                <td><input type="txtEmail"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="btnSubmit" onclick="getData();">Submit</button></td>
+            </tr>
+        </table>
+        <h1>Contact Me</h1>
+        <form action="Contact" type="Post">
+            First Name: <input type="text" id="fName"><br>
+            Middle Name: <input type="text" id="mName"><br>
+            Last Name: <input type="text" id="lName"><br>
+            Email: <input type="text" id="email"><span id="txtEmailMessage"></span><br>
+            Accept Terms of Agreement
+            <input type="radio" name="yesorno" id="yes">Yes 
+            <input type="radio" name="yesorno" id="no">No <br>
+            <button id="submit" class="btn btn-primary" onclick="checkboxes(); getInformation();">Submit</button><br>
+            <a href="Joes site.html">Joes New Page</a>
+            <a href="Second Page.html">The Second Page</a>
+        </form>
+    </body>
